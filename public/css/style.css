@@ -1,0 +1,78 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    background-color: rgb(117, 117, 117);
+}
+
+/* Left Navigational Bar */
+
+.navigation {
+    position: relative;
+    float: left;
+    
+    border: rgb(131, 131, 131);
+    border-right-width: 10px;
+    border-right-style: solid;
+    background-color: rgb(177, 177, 177);
+    width: 360px;
+    height: 100%;
+}
+
+    .navImage{
+        position: relative;
+        width: 300px;
+        padding-top: 65px; 
+        padding-left: 32px;
+    }
+
+    .webTitle{
+        font-size: x-large;
+        color: black;
+        font-family: sans-serif;
+        padding-top: 8px;
+        padding-bottom: 40px;
+        text-align: center;
+    }
+
+    .navList{
+        padding-left: 40px;
+    }
+
+    li {
+        list-style-type: circle;
+        text-align: left;
+        font-size: large;
+        padding-bottom: 30px;
+        padding-left: 40px;
+    }
+
+
+/* Mediaboard */
+
+.viewport {
+    position: absolute;
+    display: inline-block;
+    left: 380px;
+    height: 100%;
+    background-color: rgb(54, 54, 54);
+    border: rgb(90, 89, 89);
+    border-left-style: Solid;
+    border-left-width: 10px;
+}
+
+    .imageDiv {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+
+    .imageObject {
+        width: 80%;
+        position: relative;
+        margin-left: 11%;
+        margin-top: 40px;
+    }
