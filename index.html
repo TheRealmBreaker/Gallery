@@ -2,6 +2,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="public/css/style.css">
+<script src="public/js/util.js"></script>
 <title>Carolina Henriquez-Silva</title>
 </head>
 <body>
@@ -9,7 +10,7 @@
 
 
 
-    <nav class="navigation" name="leftNav">
+    <nav class="navigation" id="leftNav">
         <div class="flair"><img class="navImage" src="/public/img/img1.png" alt="test image"></div>
         <h1 class="webTitle">Carolina Henriquez-Silva</h1>
         
@@ -24,20 +25,16 @@
 
 
 
-<div class="viewport" name="rightViewport">
+<div class="viewport" id="rightViewport">
+
     
-    <div class="imageDiv">
-        <img class="imageObject" src="/public/img/img1.png" alt="test image">
-    </div>
-
-    <div class="imageDiv">
-        <img class="imageObject" src="/public/img/img1.png" alt="test image">
-    </div>
-
-    <div class="imageDiv">
-        <img class="imageObject" src="/public/img/img1.png" alt="test image">
-    </div>
 </div>
+
+<script>
+    addViewObject();
+    addViewObject();
+    addViewObject();
+</script>
 
 </body>
 </html>
