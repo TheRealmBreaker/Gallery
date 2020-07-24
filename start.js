@@ -22,6 +22,61 @@ app.get('/', function (req, res) {
     console.log('Listening on http://localhost:8080/');
 });
 
+app.get('/characters', function (req, res){
+
+    app.use(express.static("resources"));
+
+    
+    fs.readFile('./index.html', null, function(error, data){
+        if (error) {
+            res.writeHead(404);
+            res.write('404 Not Found.');
+        } else {
+            res.write(data);
+        }
+        
+        res.end();
+    })
+
+});
+
+app.get('/characters/path', function (req, res){
+
+    app.use(express.static("resources"));
+    
+    fs.readFile('./resources/json/charPaths.json', null, function (error, data){
+        if(error){
+            res.writeHead(404);
+            res.write('404 Not Found.');
+        } else {
+            var parseData = JSON.parse(data);
+            console.log(parseData);
+            res.json(parseData);
+        }
+    });
+
+    //res.end();
+
+});
+
+function makeJsonPathFile(){
+    let imgList = new Array();
+
+    let i = 0;
+
+    fs.readdirSync("./resources/characters/").forEach (file => {
+        
+        imgList.push(file);
+        imgList[i] = "/characters/"+imgList[i];
+        i++;
+    });
+
+    var jsonFile = JSON.stringify(imgList);
+    fs.writeFile('./resources/json/charPaths.json', jsonFile, function(err){
+        if(err) throw err;
+    });
+};
+
 
 
 

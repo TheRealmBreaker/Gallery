@@ -1,5 +1,7 @@
 function addViewObject(){
 
+
+
     var view = document.getElementById("rightViewport");
     var img = document.createElement("div");
     img.className = "imageDiv";
@@ -13,3 +15,16 @@ function addViewObject(){
 
     view.appendChild(img);
 }
+
+function getJson(){
+
+    
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.open ("GET", "http://localhost:8080/characters/path", true);
+    xmlhttp.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200){
+            console.log(xmlhttp);
+        }
+    }
+    xmlhttp.send();
+};
