@@ -2,7 +2,7 @@ html, body {
     margin: 0px;
     border: 0px;
     padding: 0px;
-    background-color: rgb(117, 117, 117);
+    background-color: rgb(29, 29, 29);
     height: 100%;
 }
 
@@ -12,17 +12,14 @@ html, body {
     position: sticky;
     top: 0px;
     float: left;
-    border: rgb(131, 131, 131);
-    border-right-width: 10px;
-    border-right-style: solid;
     background-color: rgb(177, 177, 177);
-    width: 360px;
+    width: 320px;
 }
 
     .navImage{
-        width: 300px;
-        padding-top: 65px; 
-        padding-left: 32px;
+        width: 80%;
+        padding-top: 45px;
+        padding-left:10%; 
     }
 
     .webTitle{
@@ -34,29 +31,30 @@ html, body {
         text-align: center;
     }
 
-    .navList{
-        padding-left: 40px;
+    ul {
+        padding: 0px;
+        margin: 0px;
+        border: 1px solid black;
     }
 
     li {
-        list-style-type: circle;
-        text-align: left;
+        list-style-type: none;
+        text-align: center;
         font-size: large;
-        padding-bottom: 30px;
-        padding-left: 40px;
+        border: 1px solid black;
+        border-left: 0px;
+        border-right: 0px;
+        height: 40px;
     }
 
 
 /* Mediaboard */
 
 .viewport {
-    position: absolute;
-    display: inline-block;
-    left: 380px;
-    background-color: rgb(54, 54, 54);
-    border: rgb(90, 89, 89);
-    border-left-style: Solid;
-    border-left-width: 10px;
+    position: inherit;
+    margin-left: 400px;
+    padding-top: 35px;
+    
 }
 
     .imageDiv {
@@ -67,8 +65,6 @@ html, body {
     }
 
     .imageObject {
-        width: 80%;
+        width: 30%;
         position: relative;
-        margin-left: 11%;
-        margin-top: 40px;
     }

@@ -9,15 +9,40 @@ app.use('/public', express.static('public'));
 
 app.get('/', function (req, res) {
 
-    fs.readFile('./index.html', null, function(error, data){
+    var index = '404 Not Found.';
+
+    fs.readFile('./resources/html/nav.html', 'utf8', function(error, data){
         if (error) {
             res.writeHead(404);
-            res.write('404 Not Found.');
+            res.write(index);
+            res.end();
+            
         } else {
-            res.write(data);
-        }
-        res.end();
-    })
+
+        
+
+        index = data;
+
+        fs.readFile('./resources/html/img.html', 'utf8', function(error, data){
+            if(error) {
+                res.writeHead(404);
+                res.write('view not found');
+                res.end();
+            } else {
+                index += data;
+    
+                res.write(index);
+            }
+            res.end();
+            console.log('Index~');
+        });
+    }
+})
+
+    
+
+    
+
 }).listen(8080, function () {
     console.log('Listening on http://localhost:8080/');
 });
@@ -27,19 +52,215 @@ app.get('/characters', function (req, res){
     app.use(express.static("resources"));
 
     
-    fs.readFile('./index.html', null, function(error, data){
+    var index = '404 Not Found.';
+
+    fs.readFile('./resources/html/nav.html', 'utf8', function(error, data){
         if (error) {
             res.writeHead(404);
-            res.write('404 Not Found.');
+            res.write(index);
+            res.end();
+            
         } else {
-            res.write(data);
+
+        index = data;
+        fs.readFile('./resources/html/img.html', 'utf8', function(error, data){
+            if(error) {
+                res.writeHead(404);
+                res.write('view not found');
+                res.end();
+            } else {
+                index += data;
+    
+                res.write(index);
+            }
+            res.end();
+            console.log('Characters~');
+        });
         }
-        
-        res.end();
     })
 
 });
 
+
+
+
+app.get('/life', function (req, res){
+
+    app.use(express.static("resources"));
+
+    
+    var index = '404 Not Found.';
+
+    fs.readFile('./resources/html/nav.html', 'utf8', function(error, data){
+        if (error) {
+            res.writeHead(404);
+            res.write(index);
+            res.end();
+            
+        } else {
+
+        index = data;
+
+        fs.readFile('./resources/html/img.html', 'utf8', function(error, data){
+            if(error) {
+                res.writeHead(404);
+                res.write('view not found');
+                res.end();
+            } else {
+                index += data;
+    
+                res.write(index);
+            }
+            res.end();
+            console.log('Life Drawings~');
+        });
+        }
+    })    
+
+});
+
+
+app.get('/video', function (req, res){
+
+    app.use(express.static("resources"));
+
+    
+    var index = '404 Not Found.';
+
+    fs.readFile('./resources/html/nav.html', 'utf8', function(error, data){
+        if (error) {
+            res.writeHead(404);
+            res.write(index);
+            res.end();
+            
+        } else {
+
+            index = data;
+
+            fs.readFile('./resources/html/img.html', 'utf8', function(error, data){
+                if(error) {
+                    res.writeHead(404);
+                    res.write('view not found');
+                    res.end();
+                } else {
+                    index += data;
+        
+                    res.write(index);
+                }
+                res.end();
+                console.log('Animations~');
+            });
+        }
+    })
+
+});
+
+app.get('/backgrounds', function (req, res){
+
+    app.use(express.static("resources"));
+
+    
+    var index = '404 Not Found.';
+
+    fs.readFile('./resources/html/nav.html', 'utf8', function(error, data){
+        if (error) {
+            res.writeHead(404);
+            res.write(index);
+            res.end();
+            
+        } else {
+
+            index = data;
+
+            fs.readFile('./resources/html/img.html', 'utf8', function(error, data){
+                if(error) {
+                    res.writeHead(404);
+                    res.write('view not found');
+                    res.end();
+                } else {
+                    index += data;
+        
+                    res.write(index);
+                }
+                res.end();
+                console.log('Backgrounds~');
+            });
+        }
+    })
+
+});
+
+app.get('/modelling', function (req, res){
+
+    app.use(express.static("resources"));
+
+    
+    var index = '404 Not Found.';
+
+    fs.readFile('./resources/html/nav.html', 'utf8', function(error, data){
+        if (error) {
+            res.writeHead(404);
+            res.write(index);
+            res.end();
+            
+        } else {
+
+            index = data;
+
+            fs.readFile('./resources/html/img.html', 'utf8', function(error, data){
+                if(error) {
+                    res.writeHead(404);
+                    res.write('view not found');
+                    res.end();
+                } else {
+                    index += data;
+        
+                    res.write(index);
+                }
+                res.end();
+                console.log('3D Models~');
+            });
+        }
+    }) 
+
+});
+
+
+app.get('/about', function (req, res){
+
+    app.use(express.static("resources"));
+
+    
+    var index = '404 Not Found.';
+
+    fs.readFile('./resources/html/nav.html', 'utf8', function(error, data){
+        if (error) {
+            res.writeHead(404);
+            res.write(index);
+            res.end();
+            
+        } else {
+            index = data;
+
+            fs.readFile('./resources/html/img.html', 'utf8', function(error, data){
+                if(error) {
+                    res.writeHead(404);
+                    res.write('view not found');
+                    res.end();
+                } else {
+                    index += data;
+        
+                    res.write(index);
+                }
+                res.end();
+                console.log('About~');
+            });
+        }
+    })    
+
+});
+
+/* Deprecated */
 app.get('/characters/path', function (req, res){
 
     app.use(express.static("resources"));
@@ -58,6 +279,8 @@ app.get('/characters/path', function (req, res){
     //res.end();
 
 });
+
+
 
 function makeJsonPathFile(){
     let imgList = new Array();
