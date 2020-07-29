@@ -11,6 +11,7 @@ app.use(express.static("resources"));
 app.get('/', function (req, res) {
 
     var index = '404 Not Found.';
+    makeJsonPathFile();
 
     fs.readFile('./resources/html/nav.html', 'utf8', function(error, data){
         if (error) {
@@ -49,9 +50,6 @@ app.get('/', function (req, res) {
 });
 
 app.get('/character', function (req, res){
-
-    
-
     
     var index = '404 Not Found.';
 
@@ -64,7 +62,7 @@ app.get('/character', function (req, res){
         } else {
 
         index = data;
-        fs.readFile('./resources/html/img.html', 'utf8', function(error, data){
+        fs.readFile('./resources/html/chars.html', 'utf8', function(error, data){
             if(error) {
                 res.writeHead(404);
                 res.write('view not found');
@@ -85,9 +83,7 @@ app.get('/character', function (req, res){
 
 
 
-app.get('/life', function (req, res){
-
-    
+app.get('/lifedrawing', function (req, res){
 
     
     var index = '404 Not Found.';
@@ -102,7 +98,7 @@ app.get('/life', function (req, res){
 
         index = data;
 
-        fs.readFile('./resources/html/img.html', 'utf8', function(error, data){
+        fs.readFile('./resources/html/lifedraw.html', 'utf8', function(error, data){
             if(error) {
                 res.writeHead(404);
                 res.write('view not found');
@@ -122,9 +118,6 @@ app.get('/life', function (req, res){
 
 
 app.get('/video', function (req, res){
-
-   
-
     
     var index = '404 Not Found.';
 
@@ -156,7 +149,7 @@ app.get('/video', function (req, res){
 
 });
 
-app.get('/backgrounds', function (req, res){
+app.get('/background', function (req, res){
 
    
 
@@ -173,7 +166,7 @@ app.get('/backgrounds', function (req, res){
 
             index = data;
 
-            fs.readFile('./resources/html/img.html', 'utf8', function(error, data){
+            fs.readFile('./resources/html/back.html', 'utf8', function(error, data){
                 if(error) {
                     res.writeHead(404);
                     res.write('view not found');
@@ -208,7 +201,7 @@ app.get('/modelling', function (req, res){
 
             index = data;
 
-            fs.readFile('./resources/html/img.html', 'utf8', function(error, data){
+            fs.readFile('./resources/html/models.html', 'utf8', function(error, data){
                 if(error) {
                     res.writeHead(404);
                     res.write('view not found');
@@ -261,18 +254,17 @@ app.get('/about', function (req, res){
 
 });
 
-/* Deprecated */
-app.get('/characters/path', function (req, res){
+/* image manifest */
+app.get('/manifest', function (req, res){
 
     
     
-    fs.readFile('./resources/json/charPaths.json', null, function (error, data){
+    fs.readFile('./resources/json/manifest.json', null, function (error, data){
         if(error){
             res.writeHead(404);
             res.write('404 Not Found.');
         } else {
             var parseData = JSON.parse(data);
-            console.log(parseData);
             res.json(parseData);
         }
     });
@@ -283,22 +275,42 @@ app.get('/characters/path', function (req, res){
 
 
 
-function makeJsonPathFile(){
-    let imgList = new Array();
 
-    let i = 0;
+function makeJsonPathFile(){
+
+    let imgList = [[],[],[],[]];
 
     fs.readdirSync("./resources/characters/").forEach (file => {
         
-        imgList.push(file);
-        imgList[i] = "/characters/"+imgList[i];
-        i++;
+        imgList[0].push("/characters/"+file);
+        
+    });
+
+    
+    fs.readdirSync("./resources/lifepics/").forEach (file => {
+        
+        imgList[1].push("/lifepics/"+file);
+
+    });
+
+    
+    fs.readdirSync("./resources/backgrounds/").forEach (file => {
+        
+        imgList[2].push("/backgrounds/"+file);
+
+    });
+
+    
+    fs.readdirSync("./resources/models/").forEach (file => {
+        
+        imgList[3].push("/models/"+file);
     });
 
     var jsonFile = JSON.stringify(imgList);
-    fs.writeFile('./resources/json/charPaths.json', jsonFile, function(err){
+    fs.writeFile('./resources/json/manifest.json', jsonFile, function(err){
         if(err) throw err;
     });
+    
 };
 
 

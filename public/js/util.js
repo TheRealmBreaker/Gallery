@@ -1,33 +1,83 @@
-function addViewObject(toColumn){
+function getViewObject(imagePath){
 
-    var col1 = document.getElementById(toColumn);
+    
     var img = document.createElement("div");
     img.className = "imageDiv";
     
         let x = document.createElement("img");
         x.className = "imageObject";
-        x.src = "/characters/1.jpg";
+        x.src = imagePath;
         x.alt = "JS div added";
 
     img.appendChild(x);
-
-    col1.appendChild(img);
+    return img;
 }
 
-function getJson(){
+function addToColumn(imgObj,col){
+    document.getElementById(col).appendChild(imgObj);
+}
+
+function getImages(context){
 
     
     xmlhttp = new XMLHttpRequest();
-    xmlhttp.open ("GET", "http://localhost:8080/characters/path", true);
+    xmlhttp.open ("GET", "http://localhost:8080/manifest", true);
     xmlhttp.onreadystatechange = function(){
         if (this.readyState == 4 && this.status == 200){
-            console.log(xmlhttp);
+            
+            var paths = JSON.parse(this.responseText);
+            
+
+            switch (context){
+                case "/characters/":
+                    populateColumns(paths[0]);
+                    break;
+                case "/lifedrawing/":
+                    populateColumns(paths[1]);
+                    break;
+                case "/backgrounds/":
+                    populateColumns(paths[2]);
+                    break;
+                case "/models/":
+                    populateColumns(paths[3]);
+                    break; 
+            }
+
         }
     }
     xmlhttp.send();
 };
 
-function populateColumns(){
+function populateColumns(paths){
+    
+    let i = 0;
+    paths.forEach(path => {
+        
+        console.log(path);
+
+        switch(i){
+            case 0:
+                addToColumn(getViewObject(path),"column1");
+                i++;
+                break;
+            case 1:
+                addToColumn(getViewObject(path),"column2");
+                i++;
+                break;
+            case 2:
+                addToColumn(getViewObject(path),"column3");
+                i = 0;
+                break;
+        }
+
+
+        
+    });
+}
+
+
+/* test function */
+function fillViewport(){
     addViewObject("column1");
     addViewObject("column1");
     addViewObject("column1");
