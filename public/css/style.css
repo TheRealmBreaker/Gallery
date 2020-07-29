@@ -52,19 +52,37 @@ html, body {
 
 .viewport {
     position: inherit;
-    margin-left: 400px;
+    margin-left: 360px;
     padding-top: 35px;
     
 }
 
     .imageDiv {
         position: relative;
-        margin-left: auto;
-        margin-right: auto;
         
     }
 
     .imageObject {
-        width: 30%;
+        width: 100%;
+        margin-bottom: 10px;
         position: relative;
     }
+
+        /* viewport columns */
+        .col1{
+            position: absolute;
+            width: 23%;
+        }
+
+        .col2{
+            position: absolute;
+            width: 23%;
+            margin-left: 25%;
+
+        }
+
+        .col3{
+            position: absolute;
+            width: 23%;
+            margin-left: 50%;
+        }

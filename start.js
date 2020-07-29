@@ -6,6 +6,7 @@ var http = require('http');
 var fs = require('fs');
 
 app.use('/public', express.static('public'));
+app.use(express.static("resources"));
 
 app.get('/', function (req, res) {
 
@@ -47,9 +48,9 @@ app.get('/', function (req, res) {
     console.log('Listening on http://localhost:8080/');
 });
 
-app.get('/characters', function (req, res){
+app.get('/character', function (req, res){
 
-    app.use(express.static("resources"));
+    
 
     
     var index = '404 Not Found.';
@@ -86,7 +87,7 @@ app.get('/characters', function (req, res){
 
 app.get('/life', function (req, res){
 
-    app.use(express.static("resources"));
+    
 
     
     var index = '404 Not Found.';
@@ -122,7 +123,7 @@ app.get('/life', function (req, res){
 
 app.get('/video', function (req, res){
 
-    app.use(express.static("resources"));
+   
 
     
     var index = '404 Not Found.';
@@ -157,7 +158,7 @@ app.get('/video', function (req, res){
 
 app.get('/backgrounds', function (req, res){
 
-    app.use(express.static("resources"));
+   
 
     
     var index = '404 Not Found.';
@@ -192,7 +193,7 @@ app.get('/backgrounds', function (req, res){
 
 app.get('/modelling', function (req, res){
 
-    app.use(express.static("resources"));
+    
 
     
     var index = '404 Not Found.';
@@ -228,7 +229,7 @@ app.get('/modelling', function (req, res){
 
 app.get('/about', function (req, res){
 
-    app.use(express.static("resources"));
+    
 
     
     var index = '404 Not Found.';
@@ -263,7 +264,7 @@ app.get('/about', function (req, res){
 /* Deprecated */
 app.get('/characters/path', function (req, res){
 
-    app.use(express.static("resources"));
+    
     
     fs.readFile('./resources/json/charPaths.json', null, function (error, data){
         if(error){

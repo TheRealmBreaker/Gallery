@@ -1,19 +1,17 @@
-function addViewObject(){
+function addViewObject(toColumn){
 
-
-
-    var view = document.getElementById("rightViewport");
+    var col1 = document.getElementById(toColumn);
     var img = document.createElement("div");
     img.className = "imageDiv";
     
         let x = document.createElement("img");
         x.className = "imageObject";
-        x.src = "/public/img/img1.png";
+        x.src = "/characters/1.jpg";
         x.alt = "JS div added";
 
     img.appendChild(x);
 
-    view.appendChild(img);
+    col1.appendChild(img);
 }
 
 function getJson(){
@@ -28,3 +26,18 @@ function getJson(){
     }
     xmlhttp.send();
 };
+
+function populateColumns(){
+    addViewObject("column1");
+    addViewObject("column1");
+    addViewObject("column1");
+    addViewObject("column1");
+    addViewObject("column2");
+    addViewObject("column2");
+    addViewObject("column2");
+    addViewObject("column2");
+    addViewObject("column3");
+    addViewObject("column3");
+    addViewObject("column3");
+    addViewObject("column3");
+}
