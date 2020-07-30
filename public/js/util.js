@@ -106,7 +106,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var docHeight = Math.max(
         document.getElementById("column1").scrollHeight,
         document.getElementById("column2").scrollHeight,
-        document.getElementById("column3").scrollHeight
+        document.getElementById("column3").scrollHeight,
+        document.documentElement.scrollHeight
     );
 
     docHeight += 20;

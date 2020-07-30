@@ -103,9 +103,13 @@ html, body {
 
 /* video / storyboard Media focus */
 .vid-media{
-    padding-top: 5%;
+    padding-top: 1%;
     width: 75%;
-    margin-left: 10%;
+    
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 1%;
+    background-color: rosybrown;
 }
 .vid-media img{
     width: 100%;
