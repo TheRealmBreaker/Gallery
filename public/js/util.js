@@ -91,3 +91,19 @@ function fillViewport(){
     addViewObject("column3");
     addViewObject("column3");
 }
+
+/* on document load */
+
+document.addEventListener("DOMContentLoaded", function(event) { 
+    console.log("document ready!");
+    
+    let col1Height = document.getElementById("column1").offsetHeight;
+
+    var docHeight = Math.max(
+        document.getElementById("column1").offsetHeight,
+        document.getElementById("column2").offsetHeight,
+        document.getElementById("column3").offsetHeight
+    );
+
+    console.log(col1Height);
+  });
