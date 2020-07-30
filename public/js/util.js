@@ -46,6 +46,8 @@ function getImages(context){
         }
     }
     xmlhttp.send();
+    
+    
 };
 
 function populateColumns(paths){
@@ -95,15 +97,23 @@ function fillViewport(){
 /* on document load */
 
 document.addEventListener("DOMContentLoaded", function(event) { 
+
+    document.getElementById("leftNav").style.height = window.innerHeight+"px";
+
+    setTimeout(function (){
     console.log("document ready!");
     
-    let col1Height = document.getElementById("column1").offsetHeight;
-
     var docHeight = Math.max(
-        document.getElementById("column1").offsetHeight,
-        document.getElementById("column2").offsetHeight,
-        document.getElementById("column3").offsetHeight
+        document.getElementById("column1").scrollHeight,
+        document.getElementById("column2").scrollHeight,
+        document.getElementById("column3").scrollHeight
     );
 
-    console.log(col1Height);
+    docHeight += 20;
+    document.getElementById("wrapper").style.height = docHeight+"px";
+    
+    console.log(docHeight);
+
+
+    },1000);
   });

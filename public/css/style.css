@@ -2,7 +2,7 @@ html, body {
     margin: 0px;
     border: 0px;
     padding: 0px;
-    background-color: rgb(29, 29, 29);
+    background-color: rgb(56, 56, 56);
     
 }
 
@@ -12,41 +12,53 @@ html, body {
     position: sticky;
     top: 0px;
     float: left;
-    background-color: rgb(177, 177, 177);
+    background-color: rgb(255, 205, 205);
     width: 320px;
+    
     
 }
 
     .navImage{
-        width: 80%;
-        padding-top: 45px;
-        padding-left:10%; 
+        border: 3px solid black;
+        width: 77%;
+        padding: 1px;
+        margin-top: 10%;
+        margin-left:10%; 
     }
 
     .webTitle{
         font-size: x-large;
         color: black;
-        font-family: sans-serif;
-        padding-top: 8px;
-        padding-bottom: 40px;
+        font-family: 'Courier New', Courier, monospace;
+        margin-top: 5px;
         text-align: center;
     }
 
     ul {
         padding: 0px;
         margin: 0px;
-        border: 1px solid black;
     }
 
     li {
         list-style-type: none;
+        font-family: sans-serif;
         text-align: center;
         font-size: large;
-        border: 1px solid black;
+        padding-top: 5%;
+        border-top: 2px solid black;
         border-left: 0px;
         border-right: 0px;
         height: 40px;
     }
+
+    li:hover {
+        background-color: rgb(252, 186, 186);
+    }
+
+    a:hover, a:visited, a:link, a:active{
+        text-decoration: none;
+    }
+    
 
 
 
@@ -55,7 +67,7 @@ html, body {
 .viewport {
     position: inherit;
     margin-left: 360px;
-    padding-top: 35px;
+    padding-top: 0px;
     
 }
 
@@ -66,7 +78,7 @@ html, body {
 
     .imageObject {
         width: 100%;
-        margin-bottom: 40px;
+        margin-top: 40px;
         position: relative;
     }
 
@@ -91,6 +103,7 @@ html, body {
 
 /* video / storyboard Media focus */
 .vid-media{
+    padding-top: 5%;
     width: 75%;
     margin-left: 10%;
 }

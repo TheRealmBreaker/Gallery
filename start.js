@@ -25,7 +25,7 @@ app.get('/', function (req, res) {
 
         index = data;
 
-        fs.readFile('./resources/html/img.html', 'utf8', function(error, data){
+        fs.readFile('./resources/html/chars.html', 'utf8', function(error, data){
             if(error) {
                 res.writeHead(404);
                 res.write('view not found');
@@ -236,7 +236,7 @@ app.get('/about', function (req, res){
         } else {
             index = data;
 
-            fs.readFile('./resources/html/img.html', 'utf8', function(error, data){
+            fs.readFile('./resources/html/about.html', 'utf8', function(error, data){
                 if(error) {
                     res.writeHead(404);
                     res.write('view not found');
