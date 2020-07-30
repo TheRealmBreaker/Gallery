@@ -13,17 +13,17 @@ html, body {
     top: 0px;
     float: left;
     background-color: rgb(255, 205, 205);
-    width: 320px;
+    width: 15%;
     
     
 }
 
     .navImage{
         border: 3px solid black;
-        width: 77%;
+        width: 80%;
         padding: 1px;
         margin-top: 10%;
-        margin-left:10%; 
+        margin-left:8%; 
     }
 
     .webTitle{
@@ -43,7 +43,7 @@ html, body {
         list-style-type: none;
         font-family: sans-serif;
         text-align: center;
-        font-size: large;
+        font-size: medium;
         padding-top: 5%;
         border-top: 2px solid black;
         border-left: 0px;
@@ -65,8 +65,9 @@ html, body {
 /* Mediaboard */
 
 .viewport {
-    position: inherit;
-    margin-left: 360px;
+    position: absolute;
+    width: 82%;
+    margin-left: 18%;
     padding-top: 0px;
     
 }
@@ -80,25 +81,29 @@ html, body {
         width: 100%;
         margin-top: 40px;
         position: relative;
+        border: 2px solid black;
     }
 
         /* viewport columns */
         .col1{
-            position: absolute;
-            width: 23%;
+            position: relative;
+            width: 30%;
+            float: left;
+            border-bottom: 10px;
         }
 
         .col2{
-            position: absolute;
-            width: 23%;
-            margin-left: 25%;
-
+            position: relative;
+            width: 30%;
+            float: left;
+            margin-left: 2%;
         }
 
         .col3{
-            position: absolute;
-            width: 23%;
-            margin-left: 50%;
+            position: relative;
+            width: 30%;
+            float: left;
+            margin-left: 2%;
         }
 
 /* video / storyboard Media focus */
