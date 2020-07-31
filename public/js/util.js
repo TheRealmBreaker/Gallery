@@ -98,10 +98,11 @@ function fillViewport(){
 
 document.addEventListener("DOMContentLoaded", function(event) { 
 
-    document.getElementById("leftNav").style.height = window.innerHeight+"px";
-
+    var navHeight = document.getElementById("leftNav").scrollHeight;
+    console.log(navHeight);
+    document.getElementById("navEnd").style.height = (window.innerHeight - navHeight)+"px"; 
+    
     setTimeout(function (){
-    console.log("document ready!");
     
     var docHeight = Math.max(
         document.getElementById("column1").scrollHeight,
@@ -110,11 +111,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
         document.documentElement.scrollHeight
     );
 
-    docHeight += 20;
+    //docHeight += 20;
     document.getElementById("wrapper").style.height = docHeight+"px";
     
     console.log(docHeight);
+    
+    console.log("document ready!");
 
-
-    },1000);
+    },100);
   });
+
+// This function takes in a HEX color code as a string.
+function changeBackgroundColor(colorCode){
+    document.body.style.backgroundColor = colorCode;
+}

@@ -32,7 +32,8 @@ app.get('/', function (req, res) {
                 res.end();
             } else {
                 index += data;
-    
+
+
                 res.write(index);
             }
             res.end();

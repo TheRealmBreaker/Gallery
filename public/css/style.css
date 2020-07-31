@@ -2,8 +2,7 @@ html, body {
     margin: 0px;
     border: 0px;
     padding: 0px;
-    background-color: rgb(56, 56, 56);
-    
+    background-image: linear-gradient(to right, black, #6a4162, #6a4162);
 }
 
 /* Left Navigational Bar */
@@ -12,7 +11,7 @@ html, body {
     position: sticky;
     top: 0px;
     float: left;
-    background-color: rgb(255, 205, 205);
+    background-color: #f39db6;
     width: 15%;
     
     
@@ -51,8 +50,60 @@ html, body {
         height: 40px;
     }
 
-    li:hover {
-        background-color: rgb(252, 186, 186);
+    .css-char{
+        background-color: #ff759c;
+    }
+
+    .css-char:hover{
+        background-color: #fc5886;
+    }
+
+    .css-life{
+        background-color: #ff8aab;
+    }
+
+    .css-life:hover{
+        background-color: #fd739a;
+    }
+
+    .css-anim{
+        background-color: #ff99b6;
+    }
+
+    .css-anim:hover{
+        background-color: #fd80a3;
+    }
+
+    .css-back{
+        background-color: #fda9c1;
+    }
+
+    .css-back:hover{
+        background-color: #ff90af;
+    }
+
+    .css-model{
+        background-color: #ffbed0;
+    }
+
+    .css-model:hover{
+        background-color: #ffa3bd;
+    }
+
+    .css-about{
+        background-color: #fccbd9;
+        border: 2px solid black;
+        
+        border-left: 0px;
+        border-right: 0px;
+    }
+
+    .css-about:hover{
+        background-color: #ffa7c0;
+    }
+
+    #navEnd{
+        background-color: #fccbd9;
     }
 
     a:hover, a:visited, a:link, a:active{
@@ -66,9 +117,11 @@ html, body {
 
 .viewport {
     position: absolute;
-    width: 82%;
-    margin-left: 18%;
+    width: 80%;
+    margin-left: 15%;
+    padding-left: 5%;
     padding-top: 0px;
+    
     
 }
 
@@ -108,13 +161,11 @@ html, body {
 
 /* video / storyboard Media focus */
 .vid-media{
-    padding-top: 1%;
+    padding-top: 2%;
     width: 75%;
-    
     padding-left: 10%;
-    padding-right: 10%;
-    padding-bottom: 1%;
-    background-color: rosybrown;
+    padding-right: 15%;
+    
 }
 .vid-media img{
     width: 100%;
