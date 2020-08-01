@@ -2,7 +2,7 @@ html, body {
     margin: 0px;
     border: 0px;
     padding: 0px;
-    background-image: linear-gradient(to right, black, #6a4162, #6a4162);
+    background-image: linear-gradient(to right, #486658, #486658, #a5e0c3, #a5e0c3, #a5e0c3, #a5e0c3, #a5e0c3, #a5e0c3, #a5e0c3, #a5e0c3, #a5e0c3, #a5e0c3);
 }
 
 /* Left Navigational Bar */
@@ -13,7 +13,10 @@ html, body {
     float: left;
     background-color: #f39db6;
     width: 15%;
-    
+    border: 2px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    border-bottom: 0px;
     
 }
 
@@ -22,11 +25,12 @@ html, body {
         width: 80%;
         padding: 1px;
         margin-top: 10%;
-        margin-left:8%; 
+        margin-left:8%;
+        border-radius: 50%; 
     }
 
     .webTitle{
-        font-size: x-large;
+        font-size: large;
         color: black;
         font-family: 'Courier New', Courier, monospace;
         margin-top: 5px;
@@ -127,7 +131,7 @@ html, body {
 
     .imageDiv {
         position: relative;
-        
+        text-align: center;
     }
 
     .imageObject {
@@ -135,7 +139,14 @@ html, body {
         margin-top: 40px;
         position: relative;
         border: 2px solid black;
+        transition: transform .2s;
     }
+
+    .imageObject:hover{
+        transform: scale(1.02);
+    }
+
+    
 
         /* viewport columns */
         .col1{
