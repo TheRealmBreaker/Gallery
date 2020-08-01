@@ -170,6 +170,18 @@ html, body {
             margin-left: 2%;
         }
 
+/* theatre */
+.css-theatre{
+    
+    position: absolute;
+    text-align: center;
+    
+}
+
+.css-theatre-img{
+    transform: scale(0.5);
+}
+
 /* video / storyboard Media focus */
 .vid-media{
     padding-top: 2%;

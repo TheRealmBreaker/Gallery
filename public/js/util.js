@@ -8,6 +8,7 @@ function getViewObject(imagePath){
         x.className = "imageObject";
         x.src = imagePath;
         x.alt = "JS div added";
+        
 
     img.appendChild(x);
     return img;
@@ -124,4 +125,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
 // This function takes in a HEX color code as a string.
 function changeBackgroundColor(colorCode){
     document.body.style.backgroundColor = colorCode;
+}
+
+// returns a div with the given image.
+function getTheatreElement(img){
+    var theatre = document.createElement("div");
+    var theatreImg = document.createElement("img");
+
+    theatreImg.src = img;
+    theatreImg.className = "css-theatre-img";
+    theatre.appendChild(theatreImg);
+    theatre.className = "css-theatre";
+
+    document.getElementById("wrapper").appendChild(theatre);
+    return theatre;
 }
